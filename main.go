@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/BhadauriaAditya/LogLens/internal"
-	"github.com/joho/godotenv" 
+	"github.com/BhadauriaAditya/LogLens/loglens"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -23,7 +23,7 @@ func main() {
 	}
 
 	// Protected /logs route
-	http.Handle("/logs", internal.AuthMiddleware(http.HandlerFunc(internal.ViewLogs)))
+	http.Handle("/logs", loglens.AuthMiddleware(http.HandlerFunc(loglens.ViewLogs)))
 
 	// Start server
 	log.Println("🚀 LogLens running at http://localhost:8080")

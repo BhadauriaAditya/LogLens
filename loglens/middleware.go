@@ -1,4 +1,4 @@
-package internal
+package loglens
 
 import (
 	"net/http"
